@@ -128,6 +128,22 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .modal ul{list-style:none;margin-top:4px}
 .modal li{font-size:14px;padding:8px 0 8px 24px;position:relative;border-top:1px solid var(--paper)}
 .modal li::before{content:"→";position:absolute;left:0;font-weight:700;color:var(--gray)}
+
+/* before/after infographic */
+.ba{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch;margin:4px 0 10px}
+.ba-col{border-radius:14px;padding:20px 22px}
+.ba-col.before{background:var(--paper);color:var(--body)}
+.ba-col.after{background:var(--ink);color:#fff}
+.ba-h{font-size:11px;font-weight:800;letter-spacing:.2em;margin-bottom:10px}
+.before .ba-h{color:var(--gray)}
+.after .ba-h{color:#fff}
+.ba-col ul{list-style:none;margin:0}
+.ba-col li{font-size:13px;padding:6px 0 6px 20px;position:relative;line-height:1.7;border:none}
+.ba-col li::before{position:absolute;left:0;top:6px;font-weight:700}
+.before li::before{content:"✕";color:var(--gray);font-size:11px}
+.after li::before{content:"✓";font-size:12px;color:#fff}
+.ba-ar{display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gray);font-size:16px}
+@media(max-width:600px){.ba{grid-template-columns:1fr}.ba-ar{padding:6px 0;transform:rotate(90deg)}}
 @media(max-width:600px){.modal{padding:40px 24px 32px}}
 
 /* ===== consult ===== */
@@ -341,6 +357,15 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
         </div>
         <p class="more">詳しく見る →</p>
       </div>
+      <div class="case reveal" data-case="c5">
+        <div class="c-top"><span class="ind">不動産</span><span class="c-en">CASE 05</span></div>
+        <h3>営業活動を全記録し、社員の動きを見える化</h3>
+        <div class="result">
+          <span class="rn">全<i>接点を記録</i></span>
+          <p>誰が・いつ・どの顧客と・何を話したかが、全て見える状態に。</p>
+        </div>
+        <p class="more">詳しく見る →</p>
+      </div>
     </div>
 
     <div class="modal-bg" id="modalBg">
@@ -470,14 +495,17 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
 <script>
 const CASES={
 c1:{ind:"通信",en:"CASE 01",title:"請求業務の仕組み化（脱スプレッドシート）",result:"請求作成の工数を約82%削減。転記ミス・送付漏れがほぼゼロに。",
+ba:{before:["請求書はスプレッドシートに手作業で転記","月末月初は残業が常態化","転記ミス・送付漏れが発生","担当者がいないと請求が出せない"],after:["データは一元管理、請求書はほぼ自動で作成","作成工数を約82%削減","ミス・漏れはほぼゼロ","誰でも同じ品質で回せる"]},
 issue:"毎月の請求業務がスプレッドシートへの手作業の転記に依存しており、件数の増加とともに作成工数が膨張。転記ミスや送付漏れが発生し、担当者にしか分からない「属人化」も進んでいました。",
 work:["請求データの一元管理と、作成〜確認〜送付までの業務フローの再設計","手作業だった転記・集計工程の自動化","ミスを防ぐチェックポイントと運用ルールの整備","現場が自走できるようになるまでの定着伴走"],
 effect:"請求作成の工数を約82%削減。転記ミス・送付漏れはほぼゼロになり、月末月初の残業と「担当者がいないと請求が出せない」状態が解消されました。"},
 c2:{ind:"不動産",en:"CASE 02",title:"営業管理をExcelからNotionへ移行",result:"営業事務の人件費2名分を削減。情報連携コストも大幅にダウン。",
+ba:{before:["案件情報が複数のExcelに分散","どれが最新版か分からない","集計・報告のたびに事務作業が発生","書き方が人によってバラバラ"],after:["案件情報はNotionの1か所に集約","常に最新の状態を全員で共有","集計は自動、報告資料づくりが不要に","営業事務の人件費2名分を削減"]},
 issue:"営業案件の情報が複数のExcelファイルに分散し、集計・報告のたびに事務作業が発生。最新版がどれか分からない、担当者ごとに書き方が違うなど、情報連携のコストが大きくなっていました。",
 work:["Notionでの案件管理データベースの設計・構築","入力ルール・ステータス管理の標準化","既存Excelデータの移行と整備","営業・事務メンバーへのトレーニングと定着支援"],
 effect:"集計・転記のための事務作業がほぼ不要になり、営業事務の人件費2名分を削減。案件状況がリアルタイムで共有され、報告のための会議・資料作成の時間も大幅に減りました。"},
 c3:{ind:"不動産",en:"CASE 03",title:"高額CRMツールをNotionへリプレイス",result:"年間ランニングコストを約59%（約440万円/年）削減。5年合計で約1,400万円。",
+ba:{before:["高機能CRMの機能のごく一部しか使えていない","それでも年間750万円超のライセンス費用","資料・マニュアルは個人フォルダに散在","必要な情報を探すのに時間がかかる"],after:["業務に必要十分な仕組みをNotionで再構築","年間費用は約311万円に（▲59%）","ドキュメントの置き場・命名・更新ルールを統一","情報が会社の資産として蓄積される"]},
 issue:"高機能なCRMツールを契約していたものの、実際に使っていたのは機能のごく一部。それでも年間750万円超のライセンス費用が発生していました。あわせて、マニュアルや社内資料が個人のフォルダに散在し、必要な情報を探すのに時間がかかる状態でした。",
 work:["業務の棚卸しと、本当に必要な機能の見極め","物件登録〜投資判断〜契約〜月次報告までの業務フローを再設計し、Notionベースで再構築・移行","月次レポートの自動集計化（手作業の集計を削減）","ドキュメント管理手法の策定（置き場・命名・更新ルールの統一）","移行後の運用ルール整備・保守と定着伴走"],
 chart:`<p style="font-size:12px;color:#8b9097;margin:24px 0 6px;font-weight:700">年間費用の比較（万円）</p>
@@ -518,15 +546,23 @@ chart:`<p style="font-size:12px;color:#8b9097;margin:24px 0 6px;font-weight:700"
 <p style="font-size:12px;color:#8b9097;margin-top:6px">※ 移行年（2026）のNotion側は、ツール利用料311万円＋導入プロジェクト費用（初期構築）365万円の合計676万円。2027年以降は年間約441万円（▲59%）の削減。5年合計では約3,343万円 → 約1,921万円（▲約1,400万円）。</p>`,
 effect:"ライセンス費用を中心に、年間ランニングコストを約59%（約440万円/年）削減。初期構築費を含めても5年合計で約1,400万円のコスト削減となる見込みです。機能過多のツールより現場にとって使いやすくなり、月次報告の集計は自動化。ドキュメントを「探す時間」も削減され、情報が会社の資産として蓄積される状態になりました。"},
 c4:{ind:"人材",en:"CASE 04",title:"顧客管理の仕組みをNotionで構築",result:"リマインド自動化で、提案・対応漏れがゼロに。",
+ba:{before:["顧客とのやり取りは個人のメールと記憶頼み","フォロー時期を逃して提案機会を損失","対応漏れが発生","引き継ぎのたびに情報が消える"],after:["顧客情報・履歴をNotionで一元管理","フォロー期日は自動リマインド","提案・対応漏れは0件","異動・引き継ぎにも強い体制"]},
 issue:"顧客とのやり取りの履歴やフォロー時期の管理が、担当者個人のメールと記憶に依存。フォローのタイミングを逃して提案機会を失うことや、対応漏れが発生していました。",
 work:["Notionでの顧客管理データベースの構築","商談ステータス・次回アクションの管理設計","フォロー期日のリマインド自動化","運用ルールの整備と定着支援"],
-effect:"提案・対応漏れがゼロに。フォローのタイミングを仕組みで管理できるようになり、担当者の異動・引き継ぎにも強い体制になりました。"}
+effect:"提案・対応漏れがゼロに。フォローのタイミングを仕組みで管理できるようになり、担当者の異動・引き継ぎにも強い体制になりました。"},
+c5:{ind:"不動産",en:"CASE 05",title:"営業活動を全記録し、社員の動きを見える化",result:"誰が・いつ・どの顧客と・何を話したかが、全て見える状態に。",
+ba:{before:["営業の活動記録が残らない","顧客との接点は担当者本人しか知らない","経営層から現場の動きが見えない","担当変更・引き継ぎのたびに経緯が消える"],after:["電話・対面・メールの接点を案件単位で時系列記録","誰が・いつ・誰と・何を話したかが全社で見える","最終活動日が自動反映され、放置案件をすぐ検知","経緯が残るので引き継ぎがスムーズ"]},
+issue:"営業の活動記録が残っておらず、誰がどの顧客とどんなやり取りをしているのか、本人以外は分からない状態。経営層は現場の動きを把握できず、担当者の不在・交代時には経緯が分からなくなり、案件の状況把握や引き継ぎに時間がかかっていました。",
+work:["電話・対面・メールの接点を案件単位で時系列記録する仕組みをNotionで構築","ワンクリックで活動を記録できる入力導線の設計（メール連携含む）","最終活動日の自動反映による放置案件の検知","記録ルールの整備と現場への定着伴走"],
+effect:"誰が・いつ・どれだけの顧客と接点を持ち、何を話したかが全て記録され、見える化されました。案件ごとの経緯を時系列で追えるため、担当変更・引き継ぎがスムーズに。活動量が可視化されたことで、フォロー漏れや放置案件も仕組みで検知できるようになりました。"}
 };
 const bg=document.getElementById('modalBg'),mb=document.getElementById('modalBody');
 function openCase(k){const c=CASES[k];if(!c)return;
+const ba=c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'';
 mb.innerHTML=`<div class="m-top"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
 <h3>${c.title}</h3>
 <div class="m-result">成果：${c.result}</div>
+${ba}
 <h4>課題</h4><p>${c.issue}</p>
 <h4>支援内容</h4><ul>${c.work.map(w=>`<li>${w}</li>`).join('')}</ul>
 <h4>効果</h4><p>${c.effect}</p>${c.chart||''}`;
