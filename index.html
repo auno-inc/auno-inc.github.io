@@ -495,12 +495,38 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
 <script>
 const CASES={
 c1:{ind:"通信",en:"CASE 01",title:"請求業務の仕組み化（脱スプレッドシート）",result:"請求作成の工数を約82%削減。転記ミス・送付漏れがほぼゼロに。",
-ba:{before:["請求書はスプレッドシートに手作業で転記","月末月初は残業が常態化","転記ミス・送付漏れが発生","担当者がいないと請求が出せない"],after:["データは一元管理、請求書はほぼ自動で作成","作成工数を約82%削減","ミス・漏れはほぼゼロ","誰でも同じ品質で回せる"]},
+viz:`<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<text x="0" y="14" font-size="12" font-weight="700" fill="#43484f">請求書作成にかかる工数（イメージ）</text>
+<text x="0" y="53" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">BEFORE</text>
+<rect x="80" y="38" width="380" height="22" fill="#c9ced4"/><text x="468" y="54" font-size="12" fill="#43484f">100</text>
+<text x="0" y="98" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">AFTER</text>
+<rect x="80" y="83" width="68" height="22" fill="#17191d"/><text x="156" y="99" font-size="12" fill="#43484f">18</text>
+<text x="250" y="105" font-size="30" font-weight="900" fill="#17191d">▲82%</text><text x="348" y="105" font-size="13" fill="#43484f">削減</text>
+<text x="0" y="142" font-size="11.5" fill="#8b9097">※ 手作業の転記がなくなり、転記ミス・送付漏れもほぼゼロに</text>
+</svg>`,
 issue:"毎月の請求業務がスプレッドシートへの手作業の転記に依存しており、件数の増加とともに作成工数が膨張。転記ミスや送付漏れが発生し、担当者にしか分からない「属人化」も進んでいました。",
 work:["請求データの一元管理と、作成〜確認〜送付までの業務フローの再設計","手作業だった転記・集計工程の自動化","ミスを防ぐチェックポイントと運用ルールの整備","現場が自走できるようになるまでの定着伴走"],
 effect:"請求作成の工数を約82%削減。転記ミス・送付漏れはほぼゼロになり、月末月初の残業と「担当者がいないと請求が出せない」状態が解消されました。"},
 c2:{ind:"不動産",en:"CASE 02",title:"営業管理をExcelからNotionへ移行",result:"営業事務の人件費2名分を削減。情報連携コストも大幅にダウン。",
-ba:{before:["案件情報が複数のExcelに分散","どれが最新版か分からない","集計・報告のたびに事務作業が発生","書き方が人によってバラバラ"],after:["案件情報はNotionの1か所に集約","常に最新の状態を全員で共有","集計は自動、報告資料づくりが不要に","営業事務の人件費2名分を削減"]},
+viz:`<svg viewBox="0 0 560 215" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<text x="0" y="14" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">BEFORE</text>
+<text x="300" y="14" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">AFTER</text>
+<g>
+<rect x="10" y="32" width="58" height="34" rx="4" fill="#f5f6f7" stroke="#c9ced4"/><text x="39" y="53" font-size="10" fill="#8b9097" text-anchor="middle">Excel</text>
+<rect x="98" y="56" width="58" height="34" rx="4" fill="#f5f6f7" stroke="#c9ced4"/><text x="127" y="77" font-size="10" fill="#8b9097" text-anchor="middle">Excel(2)</text>
+<rect x="28" y="98" width="58" height="34" rx="4" fill="#f5f6f7" stroke="#c9ced4"/><text x="57" y="119" font-size="10" fill="#8b9097" text-anchor="middle">Excel_最新</text>
+<rect x="118" y="128" width="58" height="34" rx="4" fill="#f5f6f7" stroke="#c9ced4"/><text x="147" y="149" font-size="10" fill="#8b9097" text-anchor="middle">コピー</text>
+<text x="185" y="110" font-size="30" font-weight="900" fill="#17191d">？</text>
+</g>
+<text x="245" y="105" font-size="24" fill="#8b9097">→</text>
+<rect x="300" y="36" width="250" height="80" rx="14" fill="#17191d"/>
+<text x="425" y="70" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Notion 案件DB</text>
+<text x="425" y="93" font-size="11" fill="#c9ced4" text-anchor="middle">1か所に集約・常に最新</text>
+<line x1="340" y1="146" x2="340" y2="116" stroke="#c9ced4"/><line x1="395" y1="146" x2="395" y2="116" stroke="#c9ced4"/><line x1="450" y1="146" x2="450" y2="116" stroke="#c9ced4"/><line x1="505" y1="146" x2="505" y2="116" stroke="#c9ced4"/>
+<circle cx="340" cy="156" r="9" fill="#c9ced4"/><circle cx="395" cy="156" r="9" fill="#c9ced4"/><circle cx="450" cy="156" r="9" fill="#c9ced4"/><circle cx="505" cy="156" r="9" fill="#c9ced4"/>
+<text x="0" y="200" font-size="11.5" fill="#8b9097">ファイルが分散し最新版が不明、集計は手作業</text>
+<text x="300" y="200" font-size="11.5" fill="#8b9097">全員が同じ最新情報を見る。集計は自動 → 事務2名分削減</text>
+</svg>`,
 issue:"営業案件の情報が複数のExcelファイルに分散し、集計・報告のたびに事務作業が発生。最新版がどれか分からない、担当者ごとに書き方が違うなど、情報連携のコストが大きくなっていました。",
 work:["Notionでの案件管理データベースの設計・構築","入力ルール・ステータス管理の標準化","既存Excelデータの移行と整備","営業・事務メンバーへのトレーニングと定着支援"],
 effect:"集計・転記のための事務作業がほぼ不要になり、営業事務の人件費2名分を削減。案件状況がリアルタイムで共有され、報告のための会議・資料作成の時間も大幅に減りました。"},
@@ -546,19 +572,66 @@ chart:`<p style="font-size:12px;color:#8b9097;margin:24px 0 6px;font-weight:700"
 <p style="font-size:12px;color:#8b9097;margin-top:6px">※ 移行年（2026）のNotion側は、ツール利用料311万円＋導入プロジェクト費用（初期構築）365万円の合計676万円。2027年以降は年間約441万円（▲59%）の削減。5年合計では約3,343万円 → 約1,921万円（▲約1,400万円）。</p>`,
 effect:"ライセンス費用を中心に、年間ランニングコストを約59%（約440万円/年）削減。初期構築費を含めても5年合計で約1,400万円のコスト削減となる見込みです。機能過多のツールより現場にとって使いやすくなり、月次報告の集計は自動化。ドキュメントを「探す時間」も削減され、情報が会社の資産として蓄積される状態になりました。"},
 c4:{ind:"人材",en:"CASE 04",title:"顧客管理の仕組みをNotionで構築",result:"リマインド自動化で、提案・対応漏れがゼロに。",
-ba:{before:["顧客とのやり取りは個人のメールと記憶頼み","フォロー時期を逃して提案機会を損失","対応漏れが発生","引き継ぎのたびに情報が消える"],after:["顧客情報・履歴をNotionで一元管理","フォロー期日は自動リマインド","提案・対応漏れは0件","異動・引き継ぎにも強い体制"]},
+viz:`<svg viewBox="0 0 560 205" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<text x="0" y="14" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">BEFORE ｜ フォローは記憶頼み</text>
+<line x1="40" y1="52" x2="520" y2="52" stroke="#e5e7ea" stroke-width="2"/>
+<circle cx="80" cy="52" r="8" fill="#c9ced4"/><circle cx="180" cy="52" r="8" fill="#c9ced4"/><circle cx="380" cy="52" r="8" fill="#c9ced4"/>
+<circle cx="280" cy="52" r="10" fill="#ffffff" stroke="#8b9097"/><text x="280" y="56" font-size="11" fill="#43484f" text-anchor="middle">✕</text><text x="280" y="78" font-size="10" fill="#8b9097" text-anchor="middle">対応漏れ</text>
+<circle cx="480" cy="52" r="10" fill="#ffffff" stroke="#8b9097"/><text x="480" y="56" font-size="11" fill="#43484f" text-anchor="middle">✕</text><text x="480" y="78" font-size="10" fill="#8b9097" text-anchor="middle">提案機会を損失</text>
+<text x="0" y="120" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">AFTER ｜ 期日リマインド自動</text>
+<line x1="40" y1="158" x2="520" y2="158" stroke="#e5e7ea" stroke-width="2"/>
+<circle cx="80" cy="158" r="8" fill="#17191d"/><text x="80" y="162" font-size="9" fill="#fff" text-anchor="middle">✓</text>
+<circle cx="180" cy="158" r="8" fill="#17191d"/><text x="180" y="162" font-size="9" fill="#fff" text-anchor="middle">✓</text>
+<circle cx="280" cy="158" r="8" fill="#17191d"/><text x="280" y="162" font-size="9" fill="#fff" text-anchor="middle">✓</text>
+<circle cx="380" cy="158" r="8" fill="#17191d"/><text x="380" y="162" font-size="9" fill="#fff" text-anchor="middle">✓</text>
+<circle cx="480" cy="158" r="8" fill="#17191d"/><text x="480" y="162" font-size="9" fill="#fff" text-anchor="middle">✓</text>
+<text x="435" y="135" font-size="18" font-weight="900" fill="#17191d">漏れ 0件</text>
+<text x="0" y="196" font-size="11.5" fill="#8b9097">顧客ごとのフォロー期日を自動リマインド。全接点に対応できる状態に</text>
+</svg>`,
 issue:"顧客とのやり取りの履歴やフォロー時期の管理が、担当者個人のメールと記憶に依存。フォローのタイミングを逃して提案機会を失うことや、対応漏れが発生していました。",
 work:["Notionでの顧客管理データベースの構築","商談ステータス・次回アクションの管理設計","フォロー期日のリマインド自動化","運用ルールの整備と定着支援"],
 effect:"提案・対応漏れがゼロに。フォローのタイミングを仕組みで管理できるようになり、担当者の異動・引き継ぎにも強い体制になりました。"},
 c5:{ind:"不動産",en:"CASE 05",title:"営業活動を全記録し、社員の動きを見える化",result:"誰が・いつ・どの顧客と・何を話したかが、全て見える状態に。",
-ba:{before:["営業の活動記録が残らない","顧客との接点は担当者本人しか知らない","経営層から現場の動きが見えない","担当変更・引き継ぎのたびに経緯が消える"],after:["電話・対面・メールの接点を案件単位で時系列記録","誰が・いつ・誰と・何を話したかが全社で見える","最終活動日が自動反映され、放置案件をすぐ検知","経緯が残るので引き継ぎがスムーズ"]},
+viz:`<svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<text x="0" y="14" font-size="10" font-weight="800" fill="#8b9097" letter-spacing="2">BEFORE ｜ 社員の動きが見えない</text>
+<text x="120" y="52" font-size="28" font-weight="900" fill="#17191d" text-anchor="middle">？</text>
+<circle cx="120" cy="72" r="11" fill="#c9ced4"/><rect x="104" y="86" width="32" height="22" rx="10" fill="#c9ced4"/>
+<text x="280" y="46" font-size="28" font-weight="900" fill="#17191d" text-anchor="middle">？</text>
+<circle cx="280" cy="66" r="11" fill="#c9ced4"/><rect x="264" y="80" width="32" height="22" rx="10" fill="#c9ced4"/>
+<text x="430" y="52" font-size="28" font-weight="900" fill="#17191d" text-anchor="middle">？</text>
+<circle cx="430" cy="72" r="11" fill="#c9ced4"/><rect x="414" y="86" width="32" height="22" rx="10" fill="#c9ced4"/>
+<text x="60" y="90" font-size="14" fill="#8b9097">✕ 記録なし</text>
+<text x="330" y="95" font-size="14" fill="#8b9097">✕ 本人しか知らない</text>
+<text x="0" y="126" font-size="11.5" fill="#8b9097">誰が・いつ・どの顧客と・何を話したのか、経営層からは見えない</text>
+</svg>
+<div style="text-align:center;color:#8b9097;font-weight:700;margin:6px 0 10px">↓</div>
+<p style="font-size:10px;font-weight:800;letter-spacing:.2em;color:#8b9097;margin-bottom:6px">AFTER ｜ 社長が見る画面（イメージ）</p>
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<rect x="1" y="1" width="558" height="248" rx="12" fill="#ffffff" stroke="#e5e7ea"/>
+<rect x="1" y="1" width="558" height="34" rx="12" fill="#f5f6f7"/><rect x="1" y="20" width="558" height="15" fill="#f5f6f7"/>
+<text x="16" y="23" font-size="12" font-weight="700" fill="#43484f">営業活動ダッシュボード</text>
+<text x="40" y="62" font-size="11" font-weight="700" fill="#43484f">顧客接点数（今月・社員別）</text>
+<line x1="46" y1="205" x2="270" y2="205" stroke="#e5e7ea"/><line x1="46" y1="140" x2="270" y2="140" stroke="#f5f6f7"/><line x1="46" y1="75" x2="270" y2="75" stroke="#f5f6f7"/>
+<text x="40" y="209" font-size="9" fill="#8b9097" text-anchor="end">0</text><text x="40" y="144" font-size="9" fill="#8b9097" text-anchor="end">20</text><text x="40" y="79" font-size="9" fill="#8b9097" text-anchor="end">40</text>
+<rect x="60" y="94" width="28" height="111" fill="#17191d"/><text x="74" y="89" font-size="10" fill="#43484f" text-anchor="middle">34</text><text x="74" y="220" font-size="10" fill="#8b9097" text-anchor="middle">社員A</text>
+<rect x="115" y="114" width="28" height="91" fill="#17191d"/><text x="129" y="109" font-size="10" fill="#43484f" text-anchor="middle">28</text><text x="129" y="220" font-size="10" fill="#8b9097" text-anchor="middle">社員B</text>
+<rect x="170" y="137" width="28" height="68" fill="#17191d"/><text x="184" y="132" font-size="10" fill="#43484f" text-anchor="middle">21</text><text x="184" y="220" font-size="10" fill="#8b9097" text-anchor="middle">社員C</text>
+<rect x="225" y="166" width="28" height="39" fill="#c9ced4"/><text x="239" y="161" font-size="10" fill="#43484f" text-anchor="middle">12</text><text x="239" y="220" font-size="10" fill="#8b9097" text-anchor="middle">社員D</text>
+<text x="300" y="62" font-size="11" font-weight="700" fill="#43484f">最近の活動履歴</text>
+<circle cx="306" cy="84" r="3" fill="#17191d"/><text x="318" y="88" font-size="10.5" fill="#43484f">7/14　社員A → X社：訪問・提案</text>
+<circle cx="306" cy="110" r="3" fill="#17191d"/><text x="318" y="114" font-size="10.5" fill="#43484f">7/14　社員C → Y社：電話フォロー</text>
+<circle cx="306" cy="136" r="3" fill="#17191d"/><text x="318" y="140" font-size="10.5" fill="#43484f">7/15　社員B → Z社：見積をメール送付</text>
+<circle cx="306" cy="162" r="3" fill="#17191d"/><text x="318" y="166" font-size="10.5" fill="#43484f">7/16　社員A → W社：面談・条件交渉</text>
+<circle cx="306" cy="188" r="3" fill="#17191d"/><text x="318" y="192" font-size="10.5" fill="#43484f">7/17　社員D → V社：初回訪問</text>
+<text x="300" y="220" font-size="9.5" fill="#8b9097">最終活動日は自動反映。動きのない案件はすぐ検知</text>
+</svg>`,
 issue:"営業の活動記録が残っておらず、誰がどの顧客とどんなやり取りをしているのか、本人以外は分からない状態。経営層は現場の動きを把握できず、担当者の不在・交代時には経緯が分からなくなり、案件の状況把握や引き継ぎに時間がかかっていました。",
 work:["電話・対面・メールの接点を案件単位で時系列記録する仕組みをNotionで構築","ワンクリックで活動を記録できる入力導線の設計（メール連携含む）","最終活動日の自動反映による放置案件の検知","記録ルールの整備と現場への定着伴走"],
 effect:"誰が・いつ・どれだけの顧客と接点を持ち、何を話したかが全て記録され、見える化されました。案件ごとの経緯を時系列で追えるため、担当変更・引き継ぎがスムーズに。活動量が可視化されたことで、フォロー漏れや放置案件も仕組みで検知できるようになりました。"}
 };
 const bg=document.getElementById('modalBg'),mb=document.getElementById('modalBody');
 function openCase(k){const c=CASES[k];if(!c)return;
-const ba=c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'';
+const ba=c.viz?`<h4>BEFORE → AFTER</h4><div style="border:1px solid var(--line);border-radius:16px;padding:22px 22px 16px;margin:4px 0 10px">${c.viz}</div>`:(c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'');
 mb.innerHTML=`<div class="m-top"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
 <h3>${c.title}</h3>
 <div class="m-result">成果：${c.result}</div>
