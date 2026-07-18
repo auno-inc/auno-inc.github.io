@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auno株式会社</title>
+<meta name="description" content="Auno株式会社は、DX支援・ITコンサルティングを通じて中小・中堅企業様の事業を加速させます。必要最低限の改革を、最小限のコストで。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1f24;
+  --gray:#6b7076;
+  --light:#f6f7f8;
+  --line:#e3e5e8;
+  --navy:#243a52;
+  --bg:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--bg);line-height:2;font-size:15px;letter-spacing:.03em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Noto Serif JP',serif}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:100}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:700;font-size:18px;letter-spacing:.06em}
+.logo small{display:block;font-size:10px;font-weight:400;color:var(--gray);letter-spacing:.14em;line-height:1.2}
+.menu{display:flex;gap:32px;font-size:13.5px;font-weight:500}
+.menu a{padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.menu a:hover{border-color:var(--navy)}
+
+/* hero */
+.hero{padding:180px 0 120px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(26px,4.4vw,42px);font-weight:700;line-height:1.7;letter-spacing:.05em}
+.hero .mission{margin-top:40px;max-width:680px;color:var(--gray);font-size:15px}
+.hero .mission em{font-style:normal;color:var(--ink);border-bottom:1px solid var(--ink)}
+
+/* section base */
+section{padding:96px 0}
+.sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:48px;border-bottom:1px solid var(--ink);padding-bottom:16px}
+.sec-head h2{font-size:22px;font-weight:700;letter-spacing:.08em}
+.sec-head span{font-size:11px;color:var(--gray);letter-spacing:.2em}
+
+/* business */
+.biz{background:var(--light);border:1px solid var(--line);padding:48px 44px}
+.biz h3{font-size:18px;font-weight:700;letter-spacing:.06em;margin-bottom:16px}
+.biz p{color:var(--gray)}
+.biz-items{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.biz-items span{border:1px solid var(--ink);padding:6px 20px;font-size:13px;letter-spacing:.08em}
+
+/* news */
+.news li{list-style:none;display:flex;gap:32px;padding:20px 4px;border-bottom:1px solid var(--line);font-size:14px}
+.news time{color:var(--gray);white-space:nowrap;letter-spacing:.06em}
+
+/* company */
+.company-table{width:100%;border-collapse:collapse}
+.company-table th,.company-table td{text-align:left;padding:18px 12px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top;font-weight:400}
+.company-table th{width:160px;background:var(--light);font-weight:500;letter-spacing:.06em}
+
+/* recruit */
+.recruit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.job{border:1px solid var(--line);padding:36px 32px}
+.job h3{font-size:16.5px;font-weight:700;letter-spacing:.06em;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.job p{font-size:14px;color:var(--gray);margin-bottom:14px}
+.job ul{list-style:none}
+.job li{font-size:13.5px;padding:4px 0 4px 18px;position:relative}
+.job li::before{content:"―";position:absolute;left:0;color:var(--gray)}
+
+/* contact */
+.contact{background:var(--light);border-top:1px solid var(--line)}
+.contact-inner{text-align:center}
+.contact p{color:var(--gray);font-size:14.5px}
+.btn{display:inline-block;margin-top:32px;border:1px solid var(--ink);padding:14px 64px;font-size:14px;letter-spacing:.14em;font-weight:500;transition:background .25s,color .25s;background:var(--ink);color:#fff}
+.btn:hover{background:transparent;color:var(--ink)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:13px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px}
+.foot-nav{display:flex;gap:24px;color:var(--gray)}
+.foot-nav a:hover{color:var(--ink)}
+.copy{margin-top:32px;color:var(--gray);font-size:12px;letter-spacing:.06em}
+
+@media(max-width:760px){
+  .menu{display:none}
+  .hero{padding:130px 0 80px}
+  section{padding:64px 0}
+  .recruit-grid{grid-template-columns:1fr}
+  .biz{padding:32px 24px}
+  .company-table th{width:110px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Auno株式会社<small>AUNO Inc.</small></a>
+    <nav class="menu">
+      <a href="#business">事業内容</a>
+      <a href="#news">ニュースリリース</a>
+      <a href="#company">会社情報</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1 class="serif">必要最低限の改革を、<br>最小限のコストで。</h1>
+    <div class="mission">
+      <p>私たちのミッションは、<em>中小・中堅企業様の事業を加速</em>させることです。</p>
+      <p>DXの必要性が叫ばれる昨今、様々な企業様がチャレンジしていますが、<em>半分以上が失敗</em>に終わっています。その原因は多岐に渡りますが、根本の引き金になっているのは、過度の期待と難易度の高いDXの実施です。</p>
+      <p>私たちのアプローチは、本当に必要な改革を小さく確実に提供することです。<em>“必要最低限の改革を最小限のコストで”</em> をモットーに、お客様のビジネスの加速をお約束します。</p>
+    </div>
+  </div>
+</div>
+
+<section id="business">
+  <div class="wrap">
+    <div class="sec-head"><h2>事業内容</h2><span>BUSINESS</span></div>
+    <div class="biz">
+      <h3>ITコンサルティング事業</h3>
+      <p>高い知見を持ったコンサルタントが業務改革・DXを支援します。必要最低限の改革を、最小限のコストで実施できるのが当社の強みです。</p>
+      <div class="biz-items">
+        <span>DX支援</span>
+        <span>ITコンサルティング</span>
+        <span>IT人材派遣</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>ニュースリリース</h2><span>NEWS</span></div>
+    <ul class="news">
+      <li><time>2026.04.01</time><span>Auno株式会社を設立いたしました</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="company" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>会社情報</h2><span>COMPANY</span></div>
+    <table class="company-table">
+      <tr><th>名称</th><td>Auno株式会社</td></tr>
+      <tr><th>設立</th><td>2026年4月1日</td></tr>
+      <tr><th>代表取締役</th><td>小野 遼太朗</td></tr>
+      <tr><th>資本金</th><td>100万円</td></tr>
+      <tr><th>本社所在地</th><td>東京都足立区興野2丁目28−43</td></tr>
+      <tr><th>事業内容</th><td>DX支援、ITコンサルティング、IT人材派遣</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="recruit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>採用情報</h2><span>RECRUIT</span></div>
+    <div class="recruit-grid">
+      <div class="job">
+        <h3>コンサルタント</h3>
+        <p>クライアント企業の課題解決をサポートし、ビジネス価値を創出する専門家です。</p>
+        <ul>
+          <li>業務改革支援</li>
+          <li>ITシステム導入</li>
+          <li>プロジェクトマネジメント</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>営業</h3>
+        <p>新規顧客との出会いを創出し、ビジネスチャンスを見極めて拡大させるエンジンです。</p>
+        <ul>
+          <li>新規クライアントの開拓と商談</li>
+          <li>既存顧客との関係維持・拡大</li>
+          <li>市場調査と競合分析</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-inner">
+    <div class="sec-head" style="justify-content:center;text-align:left"><h2>お問い合わせ</h2><span>CONTACT</span></div>
+    <p>お問い合わせやご相談は、下記よりお願いいたします。<br>採用へのご応募もこちらから受け付けております。</p>
+    <a class="btn" href="mailto:info@auno.jp?subject=お問い合わせ（Webサイトより）">お問い合わせ</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span class="logo">Auno株式会社<small>AUNO Inc.</small></span>
+      <nav class="foot-nav">
+        <a href="#business">事業内容</a>
+        <a href="#news">ニュースリリース</a>
+        <a href="#company">会社情報</a>
+        <a href="#recruit">採用情報</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="copy">© Auno株式会社 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
