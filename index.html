@@ -7,7 +7,7 @@
 <meta name="description" content="Auno株式会社は、DX支援・ITコンサルティングを通じて中小・中堅企業様の事業を加速させます。毎月3社限定の無料相談（3時間）実施中。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --white:#ffffff;
@@ -16,7 +16,7 @@
   --body:#43484f;
   --gray:#8b9097;
   --line:#e5e7ea;
-  --en:'Inter',sans-serif;
+  --en:'Noto Sans JP',"Hiragino Kaku Gothic ProN",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -106,6 +106,29 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .case .result .rn{font-family:var(--en);font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--ink);letter-spacing:-.02em;line-height:1}
 .case .result .rn i{font-style:normal;font-size:.5em;font-family:'Noto Sans JP',sans-serif;font-weight:900}
 .case .result p{font-size:13px;color:var(--body)}
+
+.case{cursor:pointer}
+.case .more{margin-top:18px;font-size:12.5px;font-weight:700;color:var(--gray);transition:color .25s}
+.case:hover .more{color:var(--ink)}
+
+/* ===== case modal ===== */
+.modal-bg{position:fixed;inset:0;background:rgba(23,25,29,.55);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.modal-bg.open{display:flex}
+.modal{background:var(--white);border-radius:24px;max-width:680px;width:100%;max-height:86vh;overflow-y:auto;padding:52px 52px 44px;position:relative;animation:pop .3s cubic-bezier(.2,.65,.3,1)}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.modal .close{position:absolute;top:20px;right:24px;width:40px;height:40px;border:none;background:var(--paper);border-radius:50%;font-size:18px;cursor:pointer;color:var(--ink);line-height:1}
+.modal .close:hover{background:var(--line)}
+.modal .m-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.modal .ind{font-size:12px;font-weight:700;background:var(--paper);border-radius:100px;padding:5px 16px}
+.modal .c-en{font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--gray)}
+.modal h3{font-size:22px;font-weight:900;color:var(--ink);line-height:1.6;margin-bottom:8px}
+.modal .m-result{font-size:15px;font-weight:700;color:var(--ink);background:var(--paper);border-radius:12px;padding:14px 20px;margin:18px 0 28px}
+.modal h4{font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--gray);margin:26px 0 10px}
+.modal p{font-size:14.5px;margin-bottom:.6em}
+.modal ul{list-style:none;margin-top:4px}
+.modal li{font-size:14px;padding:8px 0 8px 24px;position:relative;border-top:1px solid var(--paper)}
+.modal li::before{content:"→";position:absolute;left:0;font-weight:700;color:var(--gray)}
+@media(max-width:600px){.modal{padding:40px 24px 32px}}
 
 /* ===== consult ===== */
 .consult{background:var(--paper)}
@@ -282,37 +305,48 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
       <p class="note">※ 守秘義務のため、企業名は伏せて掲載しています</p>
     </div>
     <div class="case-grid">
-      <div class="case reveal">
+      <div class="case reveal" data-case="c1">
         <div class="c-top"><span class="ind">通信</span><span class="c-en">CASE 01</span></div>
         <h3>請求業務の仕組み化（脱スプレッドシート）</h3>
         <div class="result">
           <span class="rn">82<i>%削減</i></span>
           <p>請求作成の工数を大幅削減。転記ミス・送付漏れがほぼゼロに。</p>
         </div>
+        <p class="more">詳しく見る →</p>
       </div>
-      <div class="case reveal">
+      <div class="case reveal" data-case="c2">
         <div class="c-top"><span class="ind">不動産</span><span class="c-en">CASE 02</span></div>
         <h3>営業管理をExcelからNotionへ移行</h3>
         <div class="result">
           <span class="rn">2<i>名分削減</i></span>
           <p>営業事務の人件費2名分を削減。情報連携コストも大幅にダウン。</p>
         </div>
+        <p class="more">詳しく見る →</p>
       </div>
-      <div class="case reveal">
+      <div class="case reveal" data-case="c3">
         <div class="c-top"><span class="ind">不動産</span><span class="c-en">CASE 03</span></div>
-        <h3>高額ツールのリプレイス</h3>
+        <h3>高額CRMツールをNotionへリプレイス</h3>
         <div class="result">
           <span class="rn">¥200<i>万/年</i></span>
-          <p>年間約200万円のコスト削減を実現。</p>
+          <p>年間約200万円のコスト削減。ドキュメント管理の仕組みも整備。</p>
         </div>
+        <p class="more">詳しく見る →</p>
       </div>
-      <div class="case reveal">
+      <div class="case reveal" data-case="c4">
         <div class="c-top"><span class="ind">人材</span><span class="c-en">CASE 04</span></div>
         <h3>顧客管理の仕組みをNotionで構築</h3>
         <div class="result">
           <span class="rn">0<i>件</i></span>
           <p>リマインド自動化で、提案・対応漏れがゼロに。</p>
         </div>
+        <p class="more">詳しく見る →</p>
+      </div>
+    </div>
+
+    <div class="modal-bg" id="modalBg">
+      <div class="modal" role="dialog" aria-modal="true">
+        <button class="close" id="modalClose" aria-label="閉じる">✕</button>
+        <div id="modalBody"></div>
       </div>
     </div>
   </div>
@@ -434,6 +468,38 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
 </footer>
 
 <script>
+const CASES={
+c1:{ind:"通信",en:"CASE 01",title:"請求業務の仕組み化（脱スプレッドシート）",result:"請求作成の工数を約82%削減。転記ミス・送付漏れがほぼゼロに。",
+issue:"毎月の請求業務がスプレッドシートへの手作業の転記に依存しており、件数の増加とともに作成工数が膨張。転記ミスや送付漏れが発生し、担当者にしか分からない「属人化」も進んでいました。",
+work:["請求データの一元管理と、作成〜確認〜送付までの業務フローの再設計","手作業だった転記・集計工程の自動化","ミスを防ぐチェックポイントと運用ルールの整備","現場が自走できるようになるまでの定着伴走"],
+effect:"請求作成の工数を約82%削減。転記ミス・送付漏れはほぼゼロになり、月末月初の残業と「担当者がいないと請求が出せない」状態が解消されました。"},
+c2:{ind:"不動産",en:"CASE 02",title:"営業管理をExcelからNotionへ移行",result:"営業事務の人件費2名分を削減。情報連携コストも大幅にダウン。",
+issue:"営業案件の情報が複数のExcelファイルに分散し、集計・報告のたびに事務作業が発生。最新版がどれか分からない、担当者ごとに書き方が違うなど、情報連携のコストが大きくなっていました。",
+work:["Notionでの案件管理データベースの設計・構築","入力ルール・ステータス管理の標準化","既存Excelデータの移行と整備","営業・事務メンバーへのトレーニングと定着支援"],
+effect:"集計・転記のための事務作業がほぼ不要になり、営業事務の人件費2名分を削減。案件状況がリアルタイムで共有され、報告のための会議・資料作成の時間も大幅に減りました。"},
+c3:{ind:"不動産",en:"CASE 03",title:"高額CRMツールをNotionへリプレイス",result:"年間約200万円のコスト削減。ドキュメント管理の仕組みも整備。",
+issue:"高機能なCRMツールを契約していたものの、実際に使っていたのは機能のごく一部。それでも高額なライセンス費用が毎年発生していました。あわせて、マニュアルや社内資料が個人のフォルダに散在し、必要な情報を探すのに時間がかかる状態でした。",
+work:["業務の棚卸しと、本当に必要な機能の見極め","必要十分な仕組みをNotionベースで再構築し、CRMツールから移行","ドキュメント管理手法の策定（置き場・命名・更新ルールの統一）","移行後の運用ルール整備と定着伴走"],
+effect:"ライセンス費用を中心に年間約200万円のコストを削減。機能過多のツールより現場にとって使いやすくなり、ドキュメントを「探す時間」も削減。情報が会社の資産として蓄積される状態になりました。"},
+c4:{ind:"人材",en:"CASE 04",title:"顧客管理の仕組みをNotionで構築",result:"リマインド自動化で、提案・対応漏れがゼロに。",
+issue:"顧客とのやり取りの履歴やフォロー時期の管理が、担当者個人のメールと記憶に依存。フォローのタイミングを逃して提案機会を失うことや、対応漏れが発生していました。",
+work:["Notionでの顧客管理データベースの構築","商談ステータス・次回アクションの管理設計","フォロー期日のリマインド自動化","運用ルールの整備と定着支援"],
+effect:"提案・対応漏れがゼロに。フォローのタイミングを仕組みで管理できるようになり、担当者の異動・引き継ぎにも強い体制になりました。"}
+};
+const bg=document.getElementById('modalBg'),mb=document.getElementById('modalBody');
+function openCase(k){const c=CASES[k];if(!c)return;
+mb.innerHTML=`<div class="m-top"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
+<h3>${c.title}</h3>
+<div class="m-result">成果：${c.result}</div>
+<h4>課題</h4><p>${c.issue}</p>
+<h4>支援内容</h4><ul>${c.work.map(w=>`<li>${w}</li>`).join('')}</ul>
+<h4>効果</h4><p>${c.effect}</p>`;
+bg.classList.add('open');document.body.style.overflow='hidden';}
+function closeCase(){bg.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.case[data-case]').forEach(el=>el.addEventListener('click',()=>openCase(el.dataset.case)));
+document.getElementById('modalClose').addEventListener('click',closeCase);
+bg.addEventListener('click',e=>{if(e.target===bg)closeCase()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeCase()});
 const hd=document.getElementById('hd');
 addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>10),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
