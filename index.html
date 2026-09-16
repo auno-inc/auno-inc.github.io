@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auno株式会社｜必要最低限の改革を、最小限のコストで。</title>
 <meta name="description" content="Auno株式会社は、DX支援・ITコンサルティングを通じて中小・中堅企業様の事業を加速させます。DX／AI活用相談（3時間）実施中。">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -189,6 +192,20 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .job ul{list-style:none}
 .job li{font-size:13.5px;font-weight:500;color:var(--ink);padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--paper)}
 .job li::before{content:"→";position:absolute;left:0;font-family:var(--en);font-weight:700;color:var(--gray)}
+
+/* ===== application ===== */
+#apply{scroll-margin-top:96px}
+.application{margin-top:48px;background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.application-intro{padding:36px 38px}
+.application h3{font-size:clamp(24px,3vw,32px);font-weight:900;color:var(--ink);margin:12px 0}
+.application p{font-size:14px}
+.apply-link{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.application .btn-main{margin-top:24px}
+.application .application-note{margin-top:12px;font-size:12px;color:var(--gray)}
+@media(max-width:600px){
+  .application-intro{padding:28px 22px 24px}
+  .application .btn-main{padding:16px 22px}
+}
 
 /* ===== contact ===== */
 .contact{background:var(--white);text-align:center;padding:140px 0}
@@ -435,6 +452,8 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
     <div class="reveal">
       <span class="label">RECRUIT</span>
       <h2 class="title">採用情報</h2>
+      <p style="margin-top:22px"><strong>XやLinkedIn、他外部サービスでお仕事の募集を見た方へ</strong><br>下の「お仕事に応募する」ボタンからご応募ください。</p>
+      <p style="margin-top:18px"><a class="apply-link" href="https://knowing-fountain-292.notion.site/9c06eb3655424fe88f488b1b879111b3?pvs=105" target="_blank" rel="noopener noreferrer">お仕事に応募する ↗</a></p>
     </div>
     <div class="recruit-grid">
       <div class="job reveal">
@@ -459,13 +478,22 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
         </ul>
       </div>
     </div>
+    <div id="apply" class="application" role="region" aria-labelledby="apply-title">
+      <div class="application-intro">
+        <span class="label">ENTRY</span>
+        <h3 id="apply-title">お仕事へのご応募はこちら</h3>
+        <p>こちらのフォームから、自己紹介や希望する仕事内容などをお知らせください。</p>
+        <a class="btn-main" href="https://knowing-fountain-292.notion.site/9c06eb3655424fe88f488b1b879111b3?pvs=105" target="_blank" rel="noopener noreferrer">お仕事に応募する <span class="ar">↗</span></a>
+        <p class="application-note">Notionの応募フォームが別のタブで開きます。</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact" class="contact">
   <div class="wrap reveal">
     <h2><a href="mailto:info@auno.jp?subject=お問い合わせ（Webサイトより）">LET'S TALK.</a></h2>
-    <p class="sub">ご相談・ご依頼・採用へのご応募はこちらから。</p>
+    <p class="sub">ご相談・ご依頼はこちらから。お仕事へのご応募は<a class="apply-link" href="#apply">応募フォーム</a>へ。</p>
     <a class="mail" href="mailto:info@auno.jp">info@auno.jp <span>→</span></a>
   </div>
 </section>
@@ -481,6 +509,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
         <a href="consult.html">DX／AI活用相談</a>
         <a href="#company">会社情報</a>
         <a href="#recruit">採用情報</a>
+        <a href="#apply">お仕事への応募</a>
       </nav>
     </div>
     <div class="copy">
