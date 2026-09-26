@@ -177,7 +177,9 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .c-row:last-child{border-bottom:none}
 .c-row dt{color:var(--gray);font-weight:500}
 .c-row dd{color:var(--ink);font-weight:500}
-.ceo-card{border:1px solid var(--line);border-radius:20px;padding:42px 40px;background:var(--white)}
+.ceo-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white)}
+.ceo-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
+.ceo-body{padding:32px 40px 38px}
 .ceo-card .role{font-family:var(--en);font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--gray)}
 .ceo-card h3{font-size:23px;font-weight:900;color:var(--ink);margin:12px 0 16px}
 .ceo-card p{font-size:14px}
@@ -239,6 +241,8 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
   .hero-inner{padding-top:130px}
   .wrap{padding:0 22px}
   .c-row{grid-template-columns:104px 1fr}
+  .ceo-card{max-width:560px;width:100%}
+  .ceo-body{padding:28px 26px 32px}
 }
 </style>
 </head>
@@ -438,9 +442,12 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
         <div class="c-row"><dt>事業内容</dt><dd>業務コンサルティング、IT/AI導入支援、IT人材派遣</dd></div>
       </dl>
       <div class="ceo-card reveal">
-        <span class="role">CEO</span>
+        <img class="ceo-photo" src="ryotaro-ono.png" alt="マイクを手に話す代表取締役 小野遼太朗" width="380" height="395" loading="lazy" decoding="async">
+        <div class="ceo-body">
+        <span class="role">代表取締役</span>
         <h3>小野 遼太朗</h3>
         <p>コンサルティングの知見と実装力を併せ持つ、実行伴走型のスタイル。戦略だけで終わらせず、現場が変わるところまで責任を持ちます。</p>
+        </div>
       </div>
     </div>
   </div>
