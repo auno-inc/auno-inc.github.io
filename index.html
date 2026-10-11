@@ -139,6 +139,23 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .modal li{font-size:14px;padding:8px 0 8px 24px;position:relative;border-top:1px solid var(--paper)}
 .modal li::before{content:"→";position:absolute;left:0;font-weight:700;color:var(--gray)}
 
+.tax-process{color:var(--body);font-size:13px}
+.modal .tax-process .tax-caption{font-size:13px;line-height:1.8;margin-bottom:14px}
+.tax-flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.modal .tax-flow li{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:14px;min-width:0;line-height:1.7}
+.modal .tax-flow li::before{display:none}
+.modal .tax-flow li.human{border:2px solid var(--ink);background:var(--white)}
+.tax-step-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;font-weight:700;color:var(--gray);margin-bottom:6px}
+.tax-step-num{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;border-radius:50%;width:23px;height:23px}
+.tax-flow strong{display:block;font-size:14px;color:var(--ink)}
+.tax-tool{display:block;font-size:11px;color:var(--gray);margin-top:5px}
+.tax-base{border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:18px;background:var(--white)}
+.tax-base strong{display:block;font-size:13px;color:var(--ink);margin-bottom:10px}
+.tax-base-items{display:flex;flex-wrap:wrap;gap:6px}
+.tax-base-items span{background:var(--paper);border-radius:6px;padding:5px 8px;font-size:11px;line-height:1.7}
+.modal .tax-base .tax-caption{font-size:12px;margin:12px 0 0}
+@media(max-width:600px){.tax-flow{grid-template-columns:1fr}.tax-base{padding:12px}}
+
 /* before/after infographic */
 .ba{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch;margin:4px 0 10px}
 .ba-col{border-radius:14px;padding:20px 22px}
@@ -346,10 +363,10 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
     <div class="case-grid">
       <div class="case concept reveal" id="tax-accounting" data-case="c6" role="button" tabindex="0" aria-label="税理士事務所の導入事例の詳細を見る">
         <div class="c-top"><span class="ind">税理士事務所</span><span class="c-en">導入事例</span></div>
-        <h3>税理士事務所の記帳・顧客対応を、NotionとAIでつなぐ</h3>
+        <h3>記帳業務をはじめとしたAI駆動業務プロセス構築</h3>
         <div class="result">
-          <span class="rn">担当顧問先 30社→50社</span>
-          <p>1人あたりの担当顧問先数が30社から50社に。仕訳・決算の作業時間は従来の約半分となり、引き継ぎ負担も大幅に減りました。</p>
+          <span class="rn">担当可能顧問先 30社→50社</span>
+          <p>1人あたりの担当可能顧問先数が30社から50社に。仕訳・決算の作業時間は従来の約半分となり、引き継ぎ負担も大幅に減りました。</p>
           <p>※導入先からの報告に基づく個別事例です。同様の成果を保証するものではありません。</p>
         </div>
         <p class="more">導入事例を詳しく見る →</p>
@@ -544,10 +561,10 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
 
 <script>
 const CASES={
-c6:{wideLabel:true,ind:"税理士事務所",en:"導入事例",title:"税理士事務所の記帳・顧客対応を、NotionとAIでつなぐ",result:"1人あたりの担当顧問先数が30社から50社に増加。仕訳・決算の作業時間は従来の約半分に。",
+c6:{vizTitle:"導入後の業務プロセス",viz:"<div class=\"tax-process\" role=\"group\" aria-label=\"資料提出から担当者の承認を経てMF登録までの業務プロセス\"><p class=\"tax-caption\">提出資料をAIで整理・確認し、仕訳ドラフトを作成。担当者の確認・承認を経て、MFへ登録します。</p><ol class=\"tax-flow\"><li><div class=\"tax-step-top\"><span class=\"tax-step-num\">1</span><span>顧問先</span></div><strong>資料提出</strong><span class=\"tax-tool\">Google Drive</span></li><li><div class=\"tax-step-top\"><span class=\"tax-step-num\">2</span><span>AI</span></div><strong>資料整理</strong><span class=\"tax-tool\">Google Drive</span></li><li><div class=\"tax-step-top\"><span class=\"tax-step-num\">3</span><span>AI</span></div><strong>内容確認</strong><span class=\"tax-tool\">Google Drive</span></li><li><div class=\"tax-step-top\"><span class=\"tax-step-num\">4</span><span>AI</span></div><strong>仕訳ドラフト作成</strong><span class=\"tax-tool\">Notion</span></li><li class=\"human\"><div class=\"tax-step-top\"><span class=\"tax-step-num\">5</span><span>担当者</span></div><strong>仕訳の確認・承認</strong><span class=\"tax-tool\">Notion</span></li><li><div class=\"tax-step-top\"><span class=\"tax-step-num\">6</span><span>AI</span></div><strong>承認済み仕訳の登録</strong><span class=\"tax-tool\">MF</span></li></ol><div class=\"tax-base\"><strong>Notionの共通情報基盤</strong><div class=\"tax-base-items\"><span>顧客・担当者情報</span><span>面談・過去の会話</span><span>企業情報・知見</span><span>決算関連情報</span><span>進捗・対応履歴</span></div><p class=\"tax-caption\">↑ AIが情報を参照し、担当者が確認に活用<br>情報を共有し、担当者間の引き継ぎを支援</p></div></div>",wideLabel:true,ind:"税理士事務所",en:"導入事例",title:"記帳業務をはじめとしたAI駆動業務プロセス構築",result:"1人あたりの担当可能顧問先数が30社から50社に増加。仕訳・決算の作業時間は従来の約半分に。",
 issue:"記帳・決算業務の効率化と、顧問先情報の共有・引き継ぎ負担の軽減が求められていました。",
 work:["顧問先のCRM、面談記録、資料回収・業務進捗の管理をNotionで構築","顧問先情報、連絡先、業務の知見、決算情報、過去の会話をNotionに集約","AIによる仕訳候補・確認事項の作成を補助し、税理士・担当者の確認・承認後のMF（マネーフォワード）への登録を自動化"],
-effect:"1人あたりの実際の担当顧問先数が30社から50社に増え、仕訳・決算作業の時間は従来の約半分になりました。顧問先情報や過去のやり取りをNotionに集約したことで、担当変更時の引き継ぎ負担も大幅に減りました。※導入先からの報告に基づく個別事例です。同様の成果を保証するものではありません。"},
+effect:"1人あたりの担当可能顧問先数が30社から50社に増え、仕訳・決算作業の時間は従来の約半分になりました。顧問先情報や過去のやり取りをNotionに集約したことで、担当変更時の引き継ぎ負担も大幅に減りました。※導入先からの報告に基づく個別事例です。同様の成果を保証するものではありません。"},
 c1:{ind:"通信",en:"CASE 01",title:"請求業務の仕組み化（脱スプレッドシート）",result:"請求作成の工数を約82%削減。転記ミス・送付漏れがほぼゼロに。",
 viz:`<svg viewBox="0 0 560 235" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
 <text x="0" y="14" font-size="12" font-weight="700" fill="#43484f">請求業務のプロセスと工数の変化（月あたり）</text>
@@ -711,7 +728,7 @@ effect:"誰が・いつ・どれだけの顧客と接点を持ち、何を話し
 };
 const bg=document.getElementById('modalBg'),mb=document.getElementById('modalBody');
 function openCase(k){const c=CASES[k];if(!c)return;
-const ba=c.viz?`<h4>BEFORE → AFTER</h4><div style="border:1px solid var(--line);border-radius:16px;padding:22px 22px 16px;margin:4px 0 10px">${c.viz}</div>`:(c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'');
+const ba=c.viz?`<h4>${c.vizTitle||'BEFORE → AFTER'}</h4><div style="border:1px solid var(--line);border-radius:16px;padding:22px 22px 16px;margin:4px 0 10px">${c.viz}</div>`:(c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'');
 mb.innerHTML=`<div class="m-top ${c.concept||c.wideLabel?'concept':''}"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
 <h3>${c.title}</h3>
 <div class="m-result">${c.concept?'構想':'成果'}：${c.result}</div>
