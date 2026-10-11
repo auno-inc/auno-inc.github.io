@@ -109,6 +109,11 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .case .result .rn{font-family:var(--en);font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--ink);letter-spacing:-.02em;line-height:1}
 .case .result .rn i{font-style:normal;font-size:.5em;font-family:'Noto Sans JP',sans-serif;font-weight:900}
 .case .result p{font-size:13px;color:var(--body)}
+.case.concept .c-top{flex-wrap:wrap}
+.case.concept .c-en{letter-spacing:.03em}
+.case.concept .rn{font-family:'Noto Sans JP',sans-serif;font-size:22px;line-height:1.6}
+#tax-accounting{scroll-margin-top:100px}
+.case.concept:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 
 .case{cursor:pointer}
 .case .more{margin-top:18px;font-size:12.5px;font-weight:700;color:var(--gray);transition:color .25s}
@@ -122,6 +127,8 @@ h2.title{margin-top:16px;font-size:clamp(28px,4vw,46px);font-weight:900;letter-s
 .modal .close{position:absolute;top:20px;right:24px;width:40px;height:40px;border:none;background:var(--paper);border-radius:50%;font-size:18px;cursor:pointer;color:var(--ink);line-height:1}
 .modal .close:hover{background:var(--line)}
 .modal .m-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.modal .m-top.concept{flex-wrap:wrap;padding-right:40px}
+.modal .m-top.concept .c-en{letter-spacing:.03em}
 .modal .ind{font-size:12px;font-weight:700;background:var(--paper);border-radius:100px;padding:5px 16px}
 .modal .c-en{font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--gray)}
 .modal h3{font-size:22px;font-weight:900;color:var(--ink);line-height:1.6;margin-bottom:8px}
@@ -332,11 +339,20 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
     <div class="cases-head reveal">
       <div>
         <span class="label">CASES</span>
-        <h2 class="title">支援事例</h2>
+        <h2 class="title">支援事例・活用例</h2>
       </div>
-      <p class="note">※ 守秘義務のため、企業名は伏せて掲載しています</p>
+      <p class="note">※ 企業名は伏せて掲載しています。構想・提案段階の活用例は、その旨を明記しています。</p>
     </div>
     <div class="case-grid">
+      <div class="case concept reveal" id="tax-accounting" data-case="c6" role="button" tabindex="0" aria-label="税理士事務所向け活用例の詳細を見る">
+        <div class="c-top"><span class="ind">税理士事務所</span><span class="c-en">活用例｜構想・提案段階</span></div>
+        <h3>税理士事務所の記帳・顧客対応を、NotionとAIでつなぐ</h3>
+        <div class="result">
+          <span class="rn">記帳・顧客対応を一元管理</span>
+          <p>顧問先情報・対応履歴・資料回収・業務進捗をつなぎ、AIによる仕訳候補の作成を人の確認・承認につなげる構想です。</p>
+        </div>
+        <p class="more">活用例を詳しく見る →</p>
+      </div>
       <div class="case reveal" data-case="c1">
         <div class="c-top"><span class="ind">通信</span><span class="c-en">CASE 01</span></div>
         <h3>請求業務の仕組み化（脱スプレッドシート）</h3>
@@ -527,6 +543,10 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:var(--white)}
 
 <script>
 const CASES={
+c6:{concept:true,ind:"税理士事務所",en:"活用例｜構想・提案段階",title:"税理士事務所の記帳・顧客対応を、NotionとAIでつなぐ",result:"Notionによる一元管理と、AIの作成補助・人の確認を組み合わせる構想です。",
+issue:"顧問先情報や対応履歴、資料の回収状況が分散すると、面談準備や引き継ぎ、業務の進捗確認に手間がかかります。記帳業務と顧客対応をつなぎ、担当者が必要な情報を確認できる流れを想定しています。",
+work:["顧問先情報、面談・電話の記録、資料の回収状況、仕訳の確認・承認、業務の進捗をNotionで一元管理","AIで仕訳候補や確認事項の作成を補助","税理士・担当者の確認を経て、既存の会計ソフトへの登録につなげる業務フローを設計"],
+effect:"記帳作業の効率化に加え、引き継ぎや面談準備、顧問先へのきめ細かな対応を支援します。これは構想・提案段階の活用例であり、導入済みの実績や達成済みの成果を示すものではありません。"},
 c1:{ind:"通信",en:"CASE 01",title:"請求業務の仕組み化（脱スプレッドシート）",result:"請求作成の工数を約82%削減。転記ミス・送付漏れがほぼゼロに。",
 viz:`<svg viewBox="0 0 560 235" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
 <text x="0" y="14" font-size="12" font-weight="700" fill="#43484f">請求業務のプロセスと工数の変化（月あたり）</text>
@@ -691,16 +711,17 @@ effect:"誰が・いつ・どれだけの顧客と接点を持ち、何を話し
 const bg=document.getElementById('modalBg'),mb=document.getElementById('modalBody');
 function openCase(k){const c=CASES[k];if(!c)return;
 const ba=c.viz?`<h4>BEFORE → AFTER</h4><div style="border:1px solid var(--line);border-radius:16px;padding:22px 22px 16px;margin:4px 0 10px">${c.viz}</div>`:(c.ba?`<h4>BEFORE → AFTER</h4><div class="ba"><div class="ba-col before"><div class="ba-h">BEFORE</div><ul>${c.ba.before.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="ba-ar">→</div><div class="ba-col after"><div class="ba-h">AFTER</div><ul>${c.ba.after.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:'');
-mb.innerHTML=`<div class="m-top"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
+mb.innerHTML=`<div class="m-top ${c.concept?'concept':''}"><span class="ind">${c.ind}</span><span class="c-en">${c.en}</span></div>
 <h3>${c.title}</h3>
-<div class="m-result">成果：${c.result}</div>
+<div class="m-result">${c.concept?'構想':'成果'}：${c.result}</div>
 ${ba}
-<h4>課題</h4><p>${c.issue}</p>
-<h4>支援内容</h4><ul>${c.work.map(w=>`<li>${w}</li>`).join('')}</ul>
-<h4>効果</h4><p>${c.effect}</p>${c.chart||''}`;
+<h4>${c.concept?'想定する課題':'課題'}</h4><p>${c.issue}</p>
+<h4>${c.concept?'支援の構想':'支援内容'}</h4><ul>${c.work.map(w=>`<li>${w}</li>`).join('')}</ul>
+<h4>${c.concept?'目指す効果':'効果'}</h4><p>${c.effect}</p>${c.chart||''}`;
 bg.classList.add('open');document.body.style.overflow='hidden';}
 function closeCase(){bg.classList.remove('open');document.body.style.overflow='';}
 document.querySelectorAll('.case[data-case]').forEach(el=>el.addEventListener('click',()=>openCase(el.dataset.case)));
+document.getElementById('tax-accounting').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCase('c6')}});
 document.getElementById('modalClose').addEventListener('click',closeCase);
 bg.addEventListener('click',e=>{if(e.target===bg)closeCase()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeCase()});
