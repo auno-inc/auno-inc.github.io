@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <title>Auno connection mark</title>
+  <rect width="96" height="96" rx="20" fill="#17191d"/>
+  <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 24H35a11 11 0 0 0-11 11V56"/>
+    <path d="M40 72H61a11 11 0 0 0 11-11V40"/>
+  </g>
+</svg>
